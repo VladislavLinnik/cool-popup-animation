@@ -16,18 +16,19 @@
     box-sizing: inherit;
 }
 html {
-    -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-            box-sizing: border-box;
     height: 100%;
+    font-size: 10px;
+    box-sizing: border-box;
 }
 body {
     margin: 0;
     padding: 0;
     height: 100%;
     background-color: #fcfcf4;
+    font-size: 1.6rem;
     font-family: 'Open Sans', sans-serif;
     // font-family: 'Roboto', sans-serif;
+    // font-family: 'Blankenburg';
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -46,9 +47,9 @@ body {
     opacity: 0.6;
     background-color: transparent;
     position: fixed;
-    z-index: 2;
+    z-index: 1000;
     top: 24px;
-    left: 24px;
+    right: 24px;
     border: none;
     width: 36px;
     height: 30px;
@@ -92,9 +93,30 @@ body {
     }
 }
 
+// logo
+.logo {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    width: 8vw;
+    max-width: 20vw;
+    min-width: 6vw;
+    z-index: 999;
+
+    &-link {
+        display: block;
+    }
+
+    &-img {
+        max-width: 100%;
+        display: block;
+        border-radius: 10px;
+    }
+}
+
 // navigation
 .nav {
-    z-index: 1;
+    z-index: 999;
     position: fixed;
     top: -100%;
     left: 0;
@@ -229,10 +251,40 @@ body {
 
 // main content
 .content {
-    padding: 24px;
-    max-width: 600px;
-    margin: 60px auto;
+    // padding-top: 10%;
     transition: 0.2s ease-out;
+}
+
+.about {
+    min-height: 700px;
+    position: relative;
+    background: url('../img/pattern/isometropolis.jpg') repeat;
+
+    .container {
+        position: absolute;
+        top: 30%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+    }
+
+    &-heading {
+        font-family: 'Blankenburg';
+        color: #fff;
+        text-align: center;
+        font-size: 3em;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .8);
+    }
 }
 
 
